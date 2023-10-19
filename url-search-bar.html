@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>URL Search Bar</title>
+		<style>
+            *,
+*::before,
+*::after {
+	box-sizing: border-box !important;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Verdana";
+	overflow-x: hidden !important;
+}
+
+header {
+	background-color: #833083;
+	color: #f6c7f6;
+	padding: 5px 2px 0 2px;
+	text-align: center;
+}
+
+.search {
+	margin: -10px 0 0 0;
+	padding-bottom: 10px;
+}
+
+label {
+	background-color: black;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 5px;
+	text-transform: uppercase;
+}
+
+#url {
+	height: 27px;
+}
+
+.search-icon {
+	background-color: blueviolet;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 8px;
+	padding: 5px 7px 5px 7px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+iframe {
+	background-color: white;
+	border-color: gray;
+	border-width: 5px;
+	padding: 0.5%;
+	margin: 2px 0 0 0;
+	height: 30rem;
+	width: 99%;
+	justify-self: center;
+}
+
+@media screen and (max-width: 576px) {
+	#url {
+		margin: 10px 0 0 0;
+		width: 75%;
+	}
+}
+        </style>
+	</head>
+
+	<body>
+		<header>
+			<h1>URL Search Bar</h1>
+			<div class="search">
+				<label for="url">Enter URL: </label>&nbsp;&nbsp;&nbsp;
+				<input type="url" id="url" size="50" placeholder="https://site.com ...">
+				<button class="search-icon">
+					Go
+				</button>
+			</div>
+		</header>
+
+		<section class="urlresult">
+			<center>
+				<iframe src=""></iframe>
+			</center>
+		</section>
+		<script>
+            // declaring variables to run html code
+const urltext = document.querySelector("#url");
+const iframe = document.querySelector("iframe");
+const search = document.querySelector(".search-icon");
+
+iframe.src = "";
+
+// to run html code
+search.addEventListener("click", () => {
+	iframe.src = urltext.value;
+});
+        </script>
+	
+
+</body></html>
